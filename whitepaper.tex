@@ -11,79 +11,19 @@
 % details for the Konjure website builder.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass{article}
+\documentclass{kwp-builder}
 
-% Document version number
-\def \version {Version 1}
-\def \website {https://konjure.org}
+% Konjure Whitepaper Properties
+
+\kversion {Version 1}
+\kwebsite {https://konjure.org}
+\kdate    {September 23, 2018}
 
 %%%%%%%%%%%%%%%%%%
 % DEBUG SETTINGS
 %%%%%%%%%%%%%%%%%%
 
-% By uncommenting this line, the paper boundaries will be shown.
-% \usepackage{showframe}
-
-%%%%%%%%%%%%%%%%%%
-% PACKAGES
-%%%%%%%%%%%%%%%%%%
-
-% Paper packages.
-\usepackage[T1]{fontenc}
-\usepackage{url}
-\usepackage
-	[hidelinks] % Comment this line out to see links in boxes.
-	{hyperref}
-\usepackage[realmainfile]{currfile}
-\usepackage{fontspec}
-\usepackage{textcomp}
-\usepackage{newunicodechar}
-\usepackage{xspace}
-
-%%%%%%%%%%%%%%%%%%
-% COMMANDS
-%%%%%%%%%%%%%%%%%%
-
-% Basic commands
-\newcommand\tab[1][1cm]{\hspace*{#1}}
-
-\newcommand{\konjure}{\href{\website}{Konjure\_\texttrademark}\xspace}
-
-\newcommand{\kauthor}[3]{
-	\href{mailto:#3}{#1}\footnote{ \href{mailto:#3}{#3}}
-   	\\ \small{#2}
-}
-
-% Font fallbacks
-% Whenever a character doesn't exist in lusitana, use \_{text} or \_\command
-% to fallback to the given font below.
-
-\newfontfamily\fallbackfont{Calibri}
-\DeclareTextFontCommand{\_}{\fallbackfont}
-
-%%%%%%%%%%%%%%%%%%%%
-% DOCUMENT SETTINGS
-%%%%%%%%%%%%%%%%%%%%
-
-% Basic settings.
-\setlength{\textwidth}{\paperwidth}
-\addtolength{\textwidth}{-2in}
-
-% Font specification.
-\setmainfont [
-	Extension 	= .ttf, 	
-	Path 		= ./font/,
-	UprightFont = *-regular,
-	BoldFont 	= *-bold
-] {lusitana}
-
-% Page geometry.
-\usepackage[
-	left=1.5in, 
-	right=1.5in, 
-	top=1.25in, 
-	bottom=1.25in
-]{geometry}
+%\debug
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -93,52 +33,38 @@
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%
-% DOCUMENT TITLE DETAILS
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT FRONT PAGE DETAILS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Document title.
-\title{\textbf{\konjure}: A Website Builder for the Decentralized Web}
-
-% Author list.
-\author{
-	\kauthor{Kai Mills}{Founder, Executive Director}{kai@konjure.org} \and
-	\kauthor{Ben Adamsky}{Director, Partnerships}{ben@konjure.org} \and
-	\kauthor{Connor Hollasch}{Director, Engineering}{connor@konjure.org}
+\kbuilddoc
+%% TITLE
+{%
+	\textbf{\konjure}: A Website Builder for the Decentralized Web
+}
+%% AUTHORS
+{%
+	\kauthor{Kai Mills}			{Founder, Executive Director}	{kai@konjure.org} \and
+	\kauthor{Ben Adamsky}		{Director, Partnerships}		{ben@konjure.org} \and
+	\kauthor{Connor Hollasch}	{Director, Engineering}			{connor@konjure.org}
+}
+%% ABSTRACT
+{
+	\konjure is a decentralized website builder that streamlines the process from site creation to hosting on a distributed, peer-to-peer file system.
 }
 
-% Document date and version details.
-\date{September 23, 2018 \_\textemdash \version}
-
-\maketitle
-
-%%%%%%%%%%%%%%%%%%
-% ABSTRACT
-%%%%%%%%%%%%%%%%%%
-
-% Paper abstract section, displayed after title information.
-\begin{abstract}
-\konjure is a decentralized website builder that streamlines the process from site creation to hosting on a distributed, peer-to-peer file system. \currfileabsdir
-\end{abstract}
-
-%%%%%%%%%%%%%%%%%%
-% TABLE OF CONTENTS
-%%%%%%%%%%%%%%%%%%
-
-% Draws the table of contents.
-\tableofcontents
-\cleardoublepage
-\newpage
-
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 % WHITEPAPER SECTIONS
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
 
-\tab Bringing Web 3.0, or the Decentralized Web, has been a primary focus for most leading cryptocurrencies. Ethereum, Cardano, and numerous other projects are creating computing platforms for dApps\footnote{Abbreviated form for decentralized applications.}. Although these technologies will provide a strong backbone for the new Web, they mean very little to the average Internet user.
+% Introduction footnotes
+\kfootnote{dApps}{Abbreviated form for decentralized applications.}
+
+\tab Bringing Web 3.0, or the Decentralized Web, has been a primary focus for most leading cryptocurrencies. Ethereum, Cardano, and numerous other projects are creating computing platforms for dApps\kdApps . Although these technologies will provide a strong backbone for the new Web, they mean very little to the average Internet user.
 Owners of blogs, shops, informational websites and more can benefit from building their online presence with these technologies, but as of right now there is no user-friendly way for them to accomplish that. Essentially, we need to pave the way for mass adoption, but that will not be possible if every project is developer-focused. As the foundation is being constructed, we can begin creating an enticing gateway to Web 3.0.
 
 %%%%%%%%%%%%%%%%%%%%%% Core Technologies %%%%%%%%%%%%%%%%%%%%%%
@@ -262,5 +188,8 @@ Owners of blogs, shops, informational websites and more can benefit from buildin
 \subsection{Contributors}
 
 \tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+% Powered by LaTeX.
+\kcredits
 
 \end{document}
