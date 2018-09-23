@@ -26,6 +26,8 @@
 \usepackage{fancyhdr}
 \usepackage{tikz}
 \usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage[shortlabels]{enumitem}
 
 %%%%%%%%%%%%%%%%%%%%
 % DOCUMENT SETTINGS
@@ -41,27 +43,37 @@
 
 % Page geometry.
 \usepackage[
-	left=1.5in,
-	right=1.5in,
-	top=1.25in,
-	bottom=1.25in
+	left=1.875in,
+	right=1.875in,
+	top=1.5in,
+	bottom=1.5in
 ]{geometry}
 
-% Table of Contents
-\renewcommand{\contentsname}{Table of Contents}
+\titlespacing*{\section}
+{0pt}{10ex}{10ex}
+
+\titlespacing*{\subsection}
+{0pt}{7.5ex}{7.5ex}
+
+\titlespacing*{\subsubsection}
+{0pt}{5ex}{5ex}
 
 % Page header / footer styles
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\textsl{\rightmark}}
-\fancyhead[LO,RE]{\textsl{\leftmark}}
 \fancyfoot[C]{\thepage}
+
+% Table of Contents
+\renewcommand{\contentsname}{Table of Contents}
 
 % Font specification.
 \setmainfont [
-	Extension 	= .ttf, 	
-	Path 		= ./font/,
-	UprightFont = *-regular,
-	BoldFont 	= *-bold
+	Extension 		= .ttf,
+	Path 			= ./font/,
+	UprightFont 	= *-regular,
+	BoldFont 		= *-bold,
+	ItalicFont  	= *-italics,
+	BoldItalicFont 	= *-bolditalic
 ] {lusitana}
 
 % Font fallbacks
@@ -76,20 +88,24 @@
 %%%%%%%%%%%%%%%%%%
 
 % Macros
-\def \ktoc {\tableofcontents\cleardoublepage\newpage}
+\def \ktoc {\newpage\tableofcontents\cleardoublepage\newpage}
 
 % Basic commands
-\newcommand{\tab}[1][1cm]{\hspace*{#1}}
-\newcommand{\konjure}{\href{\website}{Konjure\_\texttrademark}\xspace}
+\newcommand{\tab}[1][0.5cm]{\hspace*{#1}}
+\newcommand{\konjure}{\href{\website}{Konjure}\xspace}
+\newcommand{\cardano}{\href{https://www.cardano.org/en/home/}{Cardano}\xspace}
+\newcommand{\ethereum}{\href{https://www.ethereum.org/}{Ethereum}\xspace}
+\newcommand{\ipfs}{\href{https://ipfs.io/}{IPFS}\xspace}
+\newcommand{\ipfsn}[1]{\href{https://ipfs.io/}{#1}\xspace}
+\newcommand{\kref}[1]{\href{#1}{#1}\xspace}
 
 % Document property commands
 \newcommand{\kversion}[1]{\def \version {#1}}
 \newcommand{\kwebsite}[1]{\def \website {#1}}
 \newcommand{\kdate}[1]{\def \datedisp {#1}}
 
-\newcommand{\kauthor}[3]{
-	\href{mailto:#3}{#1}\footnote{\xspace\href{mailto:#3}{#3}}
-   	\\ \small{#2}
+\newcommand{\kauthor}[2]{
+	\href{mailto:#2}{#1}\footnote{\xspace\href{mailto:#2}{#2}}
 }
 
 \newcommand{\kcredits}{
@@ -99,22 +115,22 @@
 }
 
 \newcommand{\kfootnote}[2]{
-	\expandafter\newcommand\csname k#1\endcsname{\footnote{#2}}
+	\expandafter\newcommand\csname k#1\endcsname{\footnote{#2}\xspace}
 }
 
 \newcommand{\kbuilddoc}[3]{
+	% Draws the table of contents.
+	\ktoc
+
 	\title{#1}
 	\author{#2}
 	\date{\datedisp \_\textemdash \version}
 	\maketitle
 	
-	% Draw the abstract
+	% Build abstract
 	\begin{abstract}
-	#3
+		\textit{#3}
 	\end{abstract}
-	
-	% Draws the table of contents.
-	\ktoc
 }
 
 % Debug command

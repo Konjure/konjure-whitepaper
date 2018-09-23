@@ -15,8 +15,8 @@
 
 % Konjure Whitepaper Properties
 
-\kversion {Version 1}
-\kwebsite {https://konjure.org}
+\kversion {Draft 1}
+\kwebsite {https://Konjure.org}
 \kdate    {September 23, 2018}
 
 %%%%%%%%%%%%%%%%%%
@@ -37,21 +37,27 @@
 % DOCUMENT FRONT PAGE DETAILS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\def \ktitle {\textbf{\konjure}: A Portal to the Decentralized Web}
+
 \kbuilddoc
 %% TITLE
 {%
-	\textbf{\konjure}: A Website Builder for the Decentralized Web
+	\ktitle
 }
 %% AUTHORS
 {%
-	\kauthor{Kai Mills}			{Founder, Executive Director}	{kai@konjure.org} \and
-	\kauthor{Ben Adamsky}		{Director, Partnerships}		{ben@konjure.org} \and
-	\kauthor{Connor Hollasch}	{Director, Engineering}			{connor@konjure.org}
+	\kauthor{Kai Micah Mills}	{kai@konjure.org} \and
+	\kauthor{Ben Adamsky}		{ben@konjure.org} \and
+	\kauthor{Johnathon Young}	{johnathon@konjure.org} \and
+	\kauthor{Connor Hollasch}	{connor@konjure.org}
 }
 %% ABSTRACT
 {
-	\konjure is a decentralized website builder that streamlines the process from site creation to hosting on a distributed, peer-to-peer file system.
+\konjure is a website builder that streamlines the process from site creation to hosting on the Decentralized Web. By utilizing \cardano\_{’}s blockchain technology, coupled with \ipfs\_{’} distributed peer-to-peer network, we are able to build a censorship-resistant platform where users are the sole owners of their data. The foundation of Web 3 is converging, and it is our objective to develop an application on top of this layer that enables anyone to become a part of it without requiring prior technical knowledge. In this paper we discuss the role \konjure will play in the Decentralized Web and the development goals we set in place to achieve this.
 }
+
+% Fancy header patch for right markers.
+\fancyhead[LO,RE]{\textsl{\ktitle}}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % WHITEPAPER SECTIONS
@@ -61,135 +67,193 @@
 
 \section{Introduction}
 
-% Introduction footnotes
-\kfootnote{dApps}{Abbreviated form for decentralized applications.}
+\tab Decentralization has been a core design element of the Internet since it began. This was essential to its success, ensuring it could survive unexpected disasters and partial system failures. The development of the World Wide Web made the Internet democratized, and as a result, individuals around the world began to create web pages, most of which were static. This was known as Web 1, where websites were primarily hosted on free web hosting services or ISP-run web servers.\bigskip
 
-\tab Bringing Web 3.0, or the Decentralized Web, has been a primary focus for most leading cryptocurrencies. Ethereum, Cardano, and numerous other projects are creating computing platforms for dApps\kdApps . Although these technologies will provide a strong backbone for the new Web, they mean very little to the average Internet user.
-Owners of blogs, shops, informational websites and more can benefit from building their online presence with these technologies, but as of right now there is no user-friendly way for them to accomplish that. Essentially, we need to pave the way for mass adoption, but that will not be possible if every project is developer-focused. As the foundation is being constructed, we can begin creating an enticing gateway to Web 3.0.
+As with any growing industry, commercialization became prevalent. Social media platforms saw widespread adoption. Websites started to emphasize advanced usability and interoperability for end users. Enter Web 2, where distributed systems such as cloud computing arose, and a small number of corporations began to monopolize the Internet. Although these innovations have progressed the Web to where it is today, we have lost the vital aspect of decentralization. Data is the most valuable resource of our generation, and the vast majority of it is owned by the largest technology companies in the world. Not only does this create central points of failure for the Web, but it enables these corporations to have complete control over one of the most powerful and influential technologies that exists in our time.\bigskip
+
+We are beginning the migration to Web 3, a decentralized, distributed, open Web for everyone, regardless of location or financial status. The innovations that are being made with cryptocurrency, blockchain, and peer-to-peer projects are giving us the opportunity to recreate the Internet with a new set of values and solutions for humanity. \konjure acts as a portal for these new technologies, enabling anyone to build a presence on this new Web, free from both government and corporate authority.
+
 
 %%%%%%%%%%%%%%%%%%%%%% Core Technologies %%%%%%%%%%%%%%%%%%%%%%
 
 \section{Core Technologies}
 \subsection{Peer-to-peer File Storage}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\subsection{Smart Contracts}
-
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\tab Using the \ipfsn{InterPlanetary File System}, \konjure is able to store static website files in a distributed environment made up of our community members. By moving to a more secure, permanent Web, sites on our platform will experience all the benefits that come with this transition. Due to the absence of central servers on the network, DDoS attacks will no longer be viable and website speeds will increase as content is served by the closest available peers. When accessing a website on \konjure, visitors connect to the network and request the necessary files. If no nearby peers are accessible, the visitor will connect to the node that originally uploaded the website. Once these files are accessed, the visitor becomes a host themselves. Cryptographic hashes ensure the security and validity of the data on the network.
 
 \subsection{Network Nodes}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\kfootnote{konj}{Official Konjure token.}
+
+\tab Users have the opportunity to run a node on the \konjure network by way of the \konjure dApp. By choosing to allocate a set amount of CPU, memory, and network speed, they become part of the file storage system. In return, they receive KONJ\kkonj{} as a reward, which can be used to host their website and be spent throughout the ecosystem. This model disrupts the web hosting industry, allowing users to allocate their spare resources to cut the costs of hosting their own website.
+
+\subsection{Blockchain \& Smart Contracts}
+
+\tab \ipfs handles static file storage, but alienates websites that require computing to function, such as blogs, shops, and forums. \konjure will be working with \cardano, not only for token deployment, but for our decentralized application as well as user websites that require computing power through smart contracts. Our peer-to-peer file system works alongside the blockchain, allowing the network to timestamp and secure website content without placing that data on the blockchain itself.
+
+\newpage
 
 \subsection{Tokens}
 \subsubsection{Use Cases}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\kfootnote{NodeReward}{Reference to 2.3 Network Nodes.}
+\kfootnote{Bazaar}{Reference to 4.1.2 Bazaar.}
+\kfootnote{Shops}{Reference to 4.1.5 \konjure Shops.}
 
-\subsubsection{Details}
+\tab The KONJ token will be the backbone to our ecosystem model, providing an incentivized system for users to engage with features on \konjure including the Network Nodes\kNodeReward and Bazaar\kBazaar{}. It also acts as a platform-wide currency that enables users to interact with an open marketplace consisting of commerce-driven \konjure Shops\kShops{}.
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begin{itemize}
+	\item The Network Nodes system will be led by the underlying KONJ token as an incentivized structure for users to run the peer-to-peer file hosting system. KONJ will be rewarded to users running nodes and will be available to use within the ecosystem.
+	
+	\item \konjure\_{’}s Bazaar will house plugins created by our community of developers; these add-ons can either be free of cost or paid for in KONJ if a licensing fee is required by the developer.
+	
+	\item The e-commerce marketplace will use KONJ as a base for transactions so users can easily vend products and services internationally with rapid speeds. While consumers can pay with the currency of their choosing, \konjure will facilitate these transactions on the back end and offer a feeless alternative if they pay using KONJ.
+\end{itemize}
 
-\subsubsection{Economy}
+\subsubsection{Sales}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\tab The sale of KONJ will be distributed in three funding rounds:
 
-\subsubsection{Sales \& Vesting}
-
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begin{enumerate}[label=(\alph*),leftmargin=2.5\parindent]
+	\item an initial seed round, dedicated to funding our prototype development and legal fees. This round will take place under \konjure LLC and provide the resources necessary to organize the \konjure Foundation overseas.
+	
+	\item a private presale round, focused on raising enough funds to cover marketing, additional legal fees, and employee expenses leading up to our public sale.
+	
+	\item a public sale, offering the majority of available KONJ tokens to the community. This round will provide both \konjure LLC and the \konjure Foundation with the resources necessary to develop the project from infancy to completion. Contributors will have the option to purchase KONJ at the public sale price or at a discounted price with a vesting agreement. In a vesting scenario, KONJ will be locked by a smart contract to be released at a predetermined date, depending on the vesting period.
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%% Organizations %%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
+
 \section{Organizations}
+\subsection{\konjure LLC}
 
-\tab The development of \konjure will take place under two organizations, ... \textbf{tbc}
+\tab Due to the core \konjure team being based in the United States, \konjure LLC is registered in Wyoming, the most crypto-friendly state. Our limited liability company will oversee the initial private seed round for the project and act as a for-profit company for numerous paid plugins, merchandise, and more.\bigskip
 
-\subsection{Konjure LLC}
+The following proposals were recently signed into law in Wyoming, directly benefiting \konjure:
 
-\tab Konjure\_{'}s dApp will be available on all Operating Systems through the official Github. Built with Electron, \textbf{tbc}
+\begin{itemize}
+	\item \textbf{HB 70: The \_{“}Utility Token Bill\_{”}} - by providing specific requirements to classify as a Utility Token, Wyoming is tackling the ambiguity surrounding what defines these tokens. This bill offers clear guidelines for KONJ to adhere to in order to avoid being classified as a security.
+	
+	\item \textbf{HB 101: The \_{“}Blockchain Fillings Bill\_{”}} - enables the creation and use of blockchain technology for (i) the purpose of storing records, (ii) the use of a network address to identify a corporation\_{’}s shareholder, and (iii) the acceptance of shareholder votes signed by network signatures.
+		
+	\item \textbf{SF 111: The \_{“}Crypto Property Tax Exemption Bill\_{”}} - ensures that virtual currencies are not subject to taxation as \_{“}property\_{”} in Wyoming.
 
-\subsection{Konjure Foundation}
+\end{itemize}
+\subsection{\konjure Foundation}
 
-\tab Konjure\_{'}s dApp will be available on all Operating Systems through the official Github. Built with Electron \textbf{tbc}
+\tab Following our initial seed round, the \konjure Foundation will be established as a nonprofit organization in Züg, Switzerland. This foundation will manage the development of all open-source \konjure projects, and conduct our private presale and public sale funding rounds. The \konjure Foundation will work in tandem with \konjure LLC to launch the full release of the platform.\bigskip
+
+Switzerland offers the following advantages:
+
+\begin{itemize}
+	\item a unique set of privacy laws that are beneficial for the development of a decentralized application like \konjure. Under Swiss law, the \konjure Foundation would be highly resistant to forced surveillance or forced sharing of user data before the platform is fully decentralized.
+	
+	\item Züg, Switzerland is referred to as \_{“}Crypto Valley\_{”} because of its influx of crypto-related projects. This has come to be because of the low corporate tax rate of about 12\% and the canton\_{’}s embracement of cryptocurrency projects. Beyond this, Züg has become a great option to launch the \konjure Foundation for networking purposes as well, with many large-scale projects such as \cardano and \ethereum already present there, and a vast amount of cryptocurrency adoption taking place in Europe.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%% Products %%%%%%%%%%%%%%%%%%%%%%
 
 \section{Products}
-\subsection{Konjure Decentralized Application}
+\subsection{\konjure Decentralized Application}
 
-\tab Konjure\_{'}s dApp will be available on all Operating Systems through the official Github. Built with Electron \textbf{tbc}
+\tab The \konjure dApp is an open-source desktop application that will be available on all operating systems. All \konjure products hook into this dApp as either core components or plugins, making it the primary focus for our engineering team. Users will be able to create and host their websites, run nodes, build plugins, and more directly inside the application.
 
 \subsubsection{Website Builder}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\kfootnote{gen}{Reference to 4.1.3 \konjure GEN.}
+
+\tab Drag-and-drop website builder functionality will be a core component of our desktop application, allowing users without any coding experience to create full layouts from scratch. By simply clicking and dragging, users will be able to piece together text, photos, user-interface elements, and more to customize their design to work for their project. \konjure GEN\kgen can also be used for a base layout design, coupled with drag-and-drop functionality as a secondary tool to refine the user\_{’}s website structure.
 
 \subsubsection{Bazaar}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\tab The Bazaar, or plugin marketplace, is an integral part of \konjure\_{’}s decentralized platform. The majority of products developed by the \konjure team are plugins built on the Bazaar, mixed in with other add-ons created by the community. We provide tools for developers to build features that are not included in \konjure by default. Developers can list their plugins on the Bazaar for free, or require a licensing fee, which is paid by website owners in KONJ. Plugins can be open or closed source, depending on the developer\_{’}s preference. Support tickets, version releases, and community ratings are all handled within the application. Website owners will be able to search plugins by keyword or category and install the ones they want with one click.
 
-\subsubsection{Konjure GEN}
+\subsubsection{\konjure GEN}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\tab On existing website builders you are forced to either use a template that is already live on a multitude of other websites, or hire a developer to design a custom theme for you, which can be costly. \konjure GEN is our innovative solution to this problem. GEN will enable users to procedurally generate websites based on their industry, preferred style, color scheme, and other suggestions. This ensures that each new design is unique and built specifically for the user. GEN will be developed with jQuery and \konjure UI, then listed on the Bazaar, free of cost.
 
-\subsubsection{Konjure Blogs}
+\newpage
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\subsubsection{\konjure Blogs}
 
-\subsubsection{Konjure Shops}
+\tab \konjure Blogs is a toolkit for users to publish content on the Decentralized Web. This can be beneficial to content creators due to the censorship-resistance that \konjure provides, as well as our customizable interface that allows blog owners to add or remove any features on the platform. This open-source plugin will be available on the Bazaar for free, allowing anyone with a \konjure website to post and organize articles, manage comments, and much more with our publishing tools.
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\subsubsection{\konjure Shops}
 
-\subsection{Konjure UI}
+\tab \konjure Shops will provide a robust e-commerce platform, allowing website owners to build online stores to vend products or services and accept both fiat and cryptocurrency as payment. Shop owners will have the ability to list items, view statistics and reports, manage inventory, and customize their websites to fit their products with ease.
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\subsection{\konjure UI}
 
-\subsection{Konjure.it}
+\tab \konjure UI is an open-source user-interface kit that can be used to develop and design websites, similar to Bootstrap. Written in raw HTML and CSS with jQuery extensions, it provides an efficient framework for building websites, increasing SEO, and has the ability to tie into plugin development on the Bazaar. Users can utilize this kit to manually customize their \konjure site, as all procedurally generated designs with \konjure GEN use the framework as a foundation. The purpose of \konjure UI is to provide a customizable base for \konjure\_{’}s front end products, as well as extend functionality to website owners and developers, offering tools to heavily modify their layouts and build full designs from scratch.
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\subsection{\konjure.it}
 
-\subsection{Konjure AI}
+\tab As creating a gateway for mass adoption of Web 3 is a primary goal with \konjure, there needs to be a simple and effective way to onboard website owners and introduce them to all the benefits that come with a decentralized platform. We can accomplish this with \konjure.it, a web application that allows users to input the URL of their live website and watch \konjure GEN create an entirely new one for them based off of their current content. Beyond this, \konjure.it will compare statistics of the two websites, such as load speed and SEO; it will also educate users on our Network Nodes system, which can enable them to host a website free of cost. Eventually, \konjure.it will be able to transfer over full blogs and shops from popular website builders, inviting not only individuals but large-scale businesses to the Decentralized Web.
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\newpage
 
-\subsection{Community Watch}
+\subsection{\konjure AI}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\tab Machine learning is a rising technology that is being incorporated into industries across the world \_{—} it is time to bring it to websites on the Decentralized Web. \konjure AI will be a research-focused project. Our goal is to experiment with artificial intelligence throughout our website builder, providing users with insights and analytics that help them raise their SEO score, drive more visitors, and gain more customers. \konjure AI will learn from visitor behavior and how it differs from industry to industry. We can incorporate this information into our other products, such as \konjure GEN, to improve websites across the platform.
+
+\subsection{Universal Risk Evaluator (URE)}
+
+\tab A fully decentralized Web comes with some concerns, especially on the topic of illegal content and copyright. Censorship-resistance is one of the primary goals of this new Web. Building a platform that makes illegal activity easier is not. Unfortunately, there will be those who use our tools for the wrong purposes, and we need to ensure that there is a way for this content to be labeled, and in extreme cases filtered, accordingly. URE will be our research and development implementation of a decentralized, community-run flagging system.
 
 %%%%%%%%%%%%%%%%%%%%%% Ecosystem Growth %%%%%%%%%%%%%%%%%%%%%%
 
 \section{Ecosystem Growth}
-\subsection{Token Allocation}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\subsection{Plugin Fund}
-
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\tab Although the \konjure Foundation will create the necessary plugins for websites to run successfully on Web 3, there are countless opportunities for third parties to develop their own plugins for the ecosystem. These add-ons can be built from scratch specifically for \konjure, or act as a modified version of the third parties\_{’} current software, expanding their customer base to the \konjure community. Not only does this strategy grow their product, but it has the ability to increase income with licensing fees paid by website owners in KONJ. The foundation will hold 20\% of the total token supply in reserve to be used primarily on ecosystem growth. With these resources we can introduce the \konjure Fund, dedicated to growing our community by backing plugins that will ensure a smoother experience for users across the platform.
 
 %%%%%%%%%%%%%%%%%%%%%% Decentralization %%%%%%%%%%%%%%%%%%%%%%
 
-\section{Decentralization}
+\newpage
+
+\section{The Future}
 \subsection{Censorship}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\tab \konjure\_{’}s focus on a permissionless, censorship-resistant product aims to utilize two of the most important qualities of decentralization and blockchain technology. The Universal Risk Evaluator (URE) is a potential method for controlling illegal content or copyright infringements. It should be noted that the \konjure organization will have no impact or authority to censor any content created by users on the platform. \konjure\_{’}s focus on the Decentralized Web does not extend to the ease of creation or sharing illegal activities and material. \konjure will continue to modify and adapt our URE to allow users the ability to filter such content.
 
 \subsection{Development}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\tab The \konjure Foundation represents a group of individuals who share a vested interest in the launch of the proposed ideas written in this whitepaper. The \konjure project, though one of our primary goals is to nurture the ecosystem to a place where it is self-guided, is expected to be governed by the community. We believe that the decentralized environment that we are trying to harbor will only survive through the many revisions of its own dedicated community and should not be supervised long-term by a single board of directors.
 
 %%%%%%%%%%%%%%%%%%%%%% Credits %%%%%%%%%%%%%%%%%%%%%%
 
 \section{Credits}
 \subsection{Sources}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begin{thebibliography}{9}
+\bibitem{hb0070}
+State of Wyoming: \textbf{House Bill No. HB0070}
+\\\texttt{\kref{http://www.wyoleg.gov/2018/Introduced/HB0070.pdf}}
 
-\subsection{Contributors}
+\bibitem{hb0101} 
+State of Wyoming: \textbf{House Bill No. HB0101}
+\\\texttt{\kref{http://www.wyoleg.gov/2018/Introduced/HB0101.pdf}}
 
-\tab Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\bibitem{hb111} 
+State of Wyoming: \textbf{Senate Bill No. 111}
+\\\texttt{\kref{https://legiscan.com/WY/text/SF0111/id/1753980}}
+ 
+\bibitem{switzerland} 
+Regulation of Cryptocurrency: Switzerland
+\\\texttt{\kref{http://www.loc.gov/law/help/cryptocurrency/switzerland.php}}
 
-% Powered by LaTeX.
-\kcredits
+\bibitem{cardano}
+\cardano
+\\\texttt{\kref{https://www.cardano.org/en/home/}}
+
+\bibitem{ipfs}
+\ipfs
+\\\texttt{\kref{https://ipfs.io/} }
+\end{thebibliography}
+
+\subsection{Acknowledgements}
+
+\tab \konjure is an ambitious project with a young team and big goals. This formulation of ideas would not have been possible without the long nights full of brainstorming with the \konjure team and advisors. A special thanks to Justin Roberts, Andrew Bull, Beth Gainer, Mitra Ardron, Brewster Kahle, and many others for their invaluable input throughout the development of \konjure to this point.
 
 \end{document}
