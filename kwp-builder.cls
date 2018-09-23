@@ -28,6 +28,7 @@
 \usepackage{graphicx}
 \usepackage{titlesec}
 \usepackage[shortlabels]{enumitem}
+\usepackage{pdfpages}
 
 %%%%%%%%%%%%%%%%%%%%
 % DOCUMENT SETTINGS
